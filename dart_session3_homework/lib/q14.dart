@@ -9,7 +9,7 @@ void main() {
     30,
     40,
     50,
-  ]; //القائمة(numbers) نفسها ممكن تكون  null
+  ]; //القائمة(numbers) نفسها ممكن تكون ? null
   if (numbers == null || numbers.isEmpty) {
     print('No scores');
   } else {

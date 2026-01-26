@@ -1,6 +1,6 @@
 // Question 19
 // Write a Dart program that converts a list of names to a set of unique values. Create a map with
-// counts of occurrences. Compare lengths and print a message if a specific name appears more than
+// counts of occurrences(عدد اسماء المتكررة). Compare lengths and print a message if a specific name appears more than
 // once.
 void main() {
   List<String> names = ['Ahmed', 'Salah', 'Ahmed', 'Mohamed'];

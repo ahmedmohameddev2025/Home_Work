@@ -4,7 +4,7 @@
 void main() {
   double price = 7.5;
 
-  String tag = price.toString().padLeft(6, '0') + " USD";
+  String tag = price.toString().padLeft(6, '\$') + " USD";
 
   print(tag);
   print(tag.length);
