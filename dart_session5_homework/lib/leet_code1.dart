@@ -24,6 +24,13 @@
 
 // 1 <= s.length <= 2 * 105
 // s consists only of printable ASCII characters.
+import 'dart:io';
+
+void main() {
+  print("Enter a string:");
+  String input = stdin.readLineSync()!;
+  print(isPalindrome(input));
+}
 
 bool isPalindrome(String s) {
   String cleaned = s.toLowerCase().replaceAll(
