@@ -4,17 +4,17 @@ import 'dart:io';
 import 'dart:math';
 
 void main() {
-  int secret = Random().nextInt(20) + 1;
+  int random = Random().nextInt(20) + 1;
 
   for (int i = 1; i <= 3; i++) {
     print("Guess your number (try $i):");
     int guess = int.parse(stdin.readLineSync()!);
 
-    if (guess == secret) {
+    if (guess == random) {
       print("Correct");
       return;
     }
   }
 
-  print("Failed, The correct number was $secret");
+  print("Failed, The correct number was $random");
 }

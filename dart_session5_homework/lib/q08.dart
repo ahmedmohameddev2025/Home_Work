@@ -10,10 +10,10 @@ void main() {
   int maxDigit = 0;
 
   for (var ch in input.split('')) {
-    int digit = int.parse(ch);
-    sum += digit;
-    if (digit > maxDigit) {
-      maxDigit = digit;
+    int number = int.parse(ch);
+    sum += number;
+    if (number > maxDigit) {
+      maxDigit = number;
     }
   }
 
