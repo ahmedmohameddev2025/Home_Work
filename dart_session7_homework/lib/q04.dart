@@ -2,9 +2,9 @@
 // that increases the salary. In main(), create an employee, give them a raise, and print the new
 // salary.
 void main() {
-  Employee emp = Employee("Ahmed", 10000);
-  emp.giveRaise(1000);
-  print(emp.salary);
+  Employee employee = Employee("Ahmed", 10000);
+  employee.giveRaise(1000);
+  print(employee.salary);
 }
 
 class Employee {

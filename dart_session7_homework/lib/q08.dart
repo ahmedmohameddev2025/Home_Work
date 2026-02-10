@@ -3,14 +3,14 @@
 import 'dart:io';
 
 void main() {
-  print("Enter a sentence:");
+  print("Input a sentence:");
   String sentence = stdin.readLineSync()!.toLowerCase();
 
   List<String> words = sentence.split(RegExp(r'\s+'));
   Map<String, int> count = {};
 
-  for (var w in words) {
-    count[w] = (count[w] ?? 0) + 1;
+  for (var word in words) {
+    count[word] = (count[word] ?? 0) + 1;
   }
 
   int uniqueCount = 0;
@@ -24,4 +24,3 @@ void main() {
 
   print("Total unique words: $uniqueCount");
 }
-
