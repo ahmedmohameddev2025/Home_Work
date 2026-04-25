@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/models/questions_data.dart';
 import 'package:quiz_app/widgets/action_buttons.dart';
 import 'package:quiz_app/widgets/custom_background_container.dart';
-import 'package:quiz_app/widgets/questions_page_view_builder.dart';
+import 'package:quiz_app/widgets/page_view_builder.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
@@ -32,14 +32,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             child: Column(
               children: [
                 Expanded(
-                  child: QuestionsPageViewBuilder(
+                  child: PageViewBuilder(
                     questions: questions,
                     pageController: _pageController,
                   ),
                 ),
-                ActionButtons(
-                  pageController: _pageController,
-                ),
+                ActionButtons(pageController: _pageController),
                 const SizedBox(height: 24),
               ],
             ),

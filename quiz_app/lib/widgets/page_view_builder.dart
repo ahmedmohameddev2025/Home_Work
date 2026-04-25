@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/models/question_model.dart';
 import 'package:quiz_app/widgets/question_item.dart';
 
-class QuestionsPageViewBuilder extends StatelessWidget {
+class PageViewBuilder extends StatelessWidget {
   final List<QuestionModel> questions;
   final PageController pageController;
 
-  const QuestionsPageViewBuilder({
+  const PageViewBuilder({
     super.key,
     required this.questions,
     required this.pageController,
