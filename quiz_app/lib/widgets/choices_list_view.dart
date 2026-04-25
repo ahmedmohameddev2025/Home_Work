@@ -17,7 +17,7 @@ class _ChoicesListViewState extends State<ChoicesListView> {
       itemCount: widget.questionModel.answers.length,
       itemBuilder: (context, index) {
         final answer = widget.questionModel.answers[index];
-        
+
         return Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: ChoiceItem(
@@ -36,19 +36,18 @@ class _ChoicesListViewState extends State<ChoicesListView> {
   }
 
   void selectAnswer(String answer) {
-    if (widget.questionModel.allowMultiple) {
-      if (widget.questionModel.selectedAnswers.contains(answer)) {
-        widget.questionModel.selectedAnswers.remove(answer);
-      } else {
-        widget.questionModel.selectedAnswers.add(answer);
-      }
+  if (widget.questionModel.isMultiChoice) {
+    // اختيار متعدد
+    if (widget.questionModel.selectedAnswers.contains(answer)) {
+      widget.questionModel.selectedAnswers.remove(answer);
     } else {
-      if (widget.questionModel.selectedAnswers.contains(answer)) {
-        widget.questionModel.selectedAnswers.clear();
-      } else {
-        widget.questionModel.selectedAnswers.clear();
-        widget.questionModel.selectedAnswers.add(answer);
-      }
+      widget.questionModel.selectedAnswers.add(answer);
     }
+  } else {
+    // اختيار واحد فقط (بدون إلغاء)
+    widget.questionModel.selectedAnswers
+      ..clear()
+      ..add(answer);
   }
+}
 }

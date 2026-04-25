@@ -29,23 +29,20 @@ system?''',
       answers: ['Strongly satisfied', 'Satisfied', 'Neutral', 'Not satisfied'],
     ),
     QuestionModel(
-      question: 'How many minutes of moderate exercise per week does WHO recommend?',
-      answers: ['150 minutes', '75 minutes', '200 minutes', '100 minutes'],
+      question: '''How often do you
+visit a doctor for checkups?''',
+      answers: ['Regularly', 'Once a year', 'Rarely', 'Never'],
     ),
     QuestionModel(
       question: '''What vitamins do you
 take?''',
-      answers: [
-        'Vitamin D3',
-        'Vitamin B',
-        'Zinc',
-        'Magnesium',
-      ],
-      allowMultiple: true,
+      answers: ['Vitamin D3', 'Vitamin B', 'Zinc', 'Magnesium'],
+      isMultiChoice: true,
     ),
     QuestionModel(
-      question: 'Which vitamin is produced by the body when exposed to sunlight?',
-      answers: ['Vitamin D', 'Vitamin C', 'Vitamin A', 'Vitamin E'],
+      question: '''How many hours do you
+spend on screens daily?''',
+      answers: ['Less than 2h', '2-4h', '4-6h', 'More than 6h'],
     ),
   ];
   @override
