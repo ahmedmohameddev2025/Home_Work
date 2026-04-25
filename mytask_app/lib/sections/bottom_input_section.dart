@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import '../controller/task_controller.dart';
+
+import '../model/task_mangement.dart';
 
 class BottomInputSection extends StatefulWidget {
-  const BottomInputSection({super.key});
+  final VoidCallback onAdd;
+
+  const BottomInputSection({super.key, required this.onAdd});
 
   @override
   State<BottomInputSection> createState() => _BottomInputSectionState();
@@ -14,9 +17,11 @@ class _BottomInputSectionState extends State<BottomInputSection> {
   void addTask() {
     if (controller.text.trim().isEmpty) return;
 
-    TaskController.addTask(controller.text.trim());
+    TaskMangement.addTask(controller.text.trim());
 
     controller.clear();
+
+    widget.onAdd();
   }
 
   @override
@@ -43,12 +48,12 @@ class _BottomInputSectionState extends State<BottomInputSection> {
           const SizedBox(width: 10),
           CircleAvatar(
             radius: 25,
-            backgroundColor: const Color(0xFF7ED0C3),
+            backgroundColor: const Color(0xFFDEE4E2),
             child: IconButton(
-              icon: const Icon(Icons.add),
+              icon: const Icon(Icons.add, color: Color(0xFF8E9492)),
               onPressed: addTask,
             ),
-          )
+          ),
         ],
       ),
     );

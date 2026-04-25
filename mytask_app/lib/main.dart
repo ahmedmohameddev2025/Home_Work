@@ -19,24 +19,33 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyTasksScreen extends StatelessWidget {
+class MyTasksScreen extends StatefulWidget {
   const MyTasksScreen({super.key});
+
+  @override
+  State<MyTasksScreen> createState() => _MyTasksScreenState();
+}
+
+class _MyTasksScreenState extends State<MyTasksScreen> {
+
+  final GlobalKey<TaskListSectionState> listKey = GlobalKey();
+
+  void refreshList() {
+    listKey.currentState?.refresh();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFEFF3F2),
-
+      backgroundColor: const Color(0xFFF5FBF9),
       body: SafeArea(
         child: Column(
-          children: const [
-            HeaderSection(),
-
+          children: [
+            const HeaderSection(),
             Expanded(
-              child: TaskListSection(),
+              child: TaskListSection(key: listKey),
             ),
-
-            BottomInputSection(),
+            BottomInputSection(onAdd: refreshList),
           ],
         ),
       ),

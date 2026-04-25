@@ -30,20 +30,31 @@ class _BmiCalculatorState extends State<BmiCalculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF03051A),
+
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const CustomAppBar(),
-              const SizedBox(height: 20),
-              const GenderSelectionSection(),
-              const SizedBox(height: 30),
-              const HightSelectionSection(),
-              const SizedBox(height: 30),
-              const WeightAgeSelectionSection(),
-              const SizedBox(height: 30),
-              const CustomButton(),
-            ],
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: const [
+                        CustomAppBar(),
+                        SizedBox(height: 30),
+                        GenderSelectionSection(),
+                        SizedBox(height: 40),
+                        HightSelectionSection(),
+                        SizedBox(height: 50),
+                        WeightAgeSelectionSection(),
+                      ],
+                    ),
+                  ),
+                ),
+                const CustomButton(),
+              ],
+            ),
           ),
         ),
       ),

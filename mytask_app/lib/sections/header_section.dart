@@ -8,7 +8,7 @@ class HeaderSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
-      color: const Color(0xFF7ED0C3),
+      color: const Color(0xFF9EF2E3),
       child: const Text(
         "My Tasks",
         style: TextStyle(

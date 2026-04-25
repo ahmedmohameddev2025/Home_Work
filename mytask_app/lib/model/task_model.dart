@@ -1,11 +1,11 @@
-class Task {
+class TaskModel {
   String title;
-  bool isDone;
+  bool isCompleted;
   DateTime createdAt;
 
-  Task({
+  TaskModel({
     required this.title,
-    this.isDone = false,
+    this.isCompleted = false,
     required this.createdAt,
   });
 }
