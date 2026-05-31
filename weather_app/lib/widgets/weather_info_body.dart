@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/weather_model.dart';
+import 'package:weather_app/models/weather_model.dart';
 
 class WeatherInfoBody extends StatelessWidget {
   final WeatherModel weather;
@@ -8,7 +8,7 @@ class WeatherInfoBody extends StatelessWidget {
 
  @override
 Widget build(BuildContext context) {
-  final Color weatherColor = getTempColor(weather.temp);
+  final Color weatherColor = getTempColor(weather.avgTempC);
 
   return Container(
     decoration: BoxDecoration(
@@ -34,7 +34,7 @@ Widget build(BuildContext context) {
           ),
           const SizedBox(height: 5),
           Text(
-            'updated at: ${weather.date}',
+            'updated at: ${weather.time}',
             style: const TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 30),
@@ -42,10 +42,10 @@ Widget build(BuildContext context) {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.network('https:${weather.icon}', width: 80, height: 80),
+              Image.network(weather.conditionIcon, width: 80, height: 80),
 
               Text(
-                '${weather.temp.toInt()}',
+                '${weather.avgTempC.toInt()}',
                 style: const TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -54,8 +54,8 @@ Widget build(BuildContext context) {
 
               Column(
                 children: [
-                  Text('maxTemp: ${weather.maxTemp.toInt()}'),
-                  Text('minTemp: ${weather.minTemp.toInt()}'),
+                  Text('maxTemp: ${weather.maxTempC.toInt()}'),
+                  Text('minTemp: ${weather.minTempC.toInt()}'),
                 ],
               ),
             ],
@@ -64,7 +64,7 @@ Widget build(BuildContext context) {
           const SizedBox(height: 40),
 
           Text(
-            weather.condition,
+            weather.conditionText,
             style: const TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
